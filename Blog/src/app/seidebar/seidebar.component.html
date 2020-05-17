@@ -19,9 +19,7 @@
             <li class="list-group-item"><a href="monatsliste.html">März 2018 (2)</a></li>
             <li class="list-group-item"><a href="monatsliste.html">April 2018 (1)</a></li>
         </ul>
-        <div class="col-12"><a class="tag-5" href="tagliste.html?tag=HTML5"> HTML5</a><a class="tag-1"
-                href="tagliste.html?tag=Dokument"> Dokument</a><a class="tag-1" href="tagliste.html?tag=HTTP">
-                HTTP</a><a class="tag-3" href="tagliste.html?tag=Element"> Element</a><a class="tag-1"
-                href="tagliste.html?tag=Semantik"> Semantik</a></div>
+
+        <div class="col-12"><a *ngFor="let taggg of tagMap.values()" [href]="">{{taggg}}</a></div>    
     </div>
 </aside>

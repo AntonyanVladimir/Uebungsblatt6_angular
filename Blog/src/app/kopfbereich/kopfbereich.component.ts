@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Http2ServerRequest } from 'http2';
+
 
 @Component({
   selector: 'app-kopfbereich',
