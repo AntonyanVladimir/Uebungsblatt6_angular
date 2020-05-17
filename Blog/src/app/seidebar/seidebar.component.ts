@@ -24,23 +24,22 @@ export class SeidebarComponent implements OnInit{
 		for (var j = 0; j < a.tags.length; j++) {
 			var tag = a.tags[j];
 			// Testen, ob das Tag schon in der Map ist
-			if (!(tag in this.tagMap)) {
+			if (!(this.tagMap.has(tag))) {
 				// Nein, taucht zum ersten Mal auf
 				// --> mit Anzahl 1 in die Map schreiben
-				this.tagMap[tag] = 1;
+				this.tagMap.set(tag,1);
 			} else {
 				// war schon da, Anzahl erhöhen
-				this.tagMap[tag]++;
+        let aktuelleTag = this.tagMap.get(tag);
+        aktuelleTag++;
 				// Maximum ggf. anpassen
 				if (this.tagMap[tag] > max) {
 					max = this.tagMap[tag];
 				}
 			}
 		}
-	}
-   for(let tag of this.tagMap.keys()){
-     console.log(tag);
-   }
+  }
+ 
    }
 
 }
