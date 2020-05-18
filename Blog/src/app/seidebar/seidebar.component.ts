@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { artikel } from '../artikel';
 
+
+
 @Component({
   selector: 'app-seidebar',
   templateUrl: './seidebar.component.html',
@@ -9,16 +11,20 @@ import { artikel } from '../artikel';
 export class SeidebarComponent implements OnInit{
   @Input("articles") articles:artikel[];
   tagMap = new Map();
-      
+  math = Math;
+  max:number;    
+  
+   getGroesse(tag:number) {
+	return Math.ceil(Math.floor(tag / (this.max / 5.0)));
+  }
   ngOnInit(): void {
-    
-   
+
 	// größte Häufigkeit eines Tags
-	var max = 1;
-	
+
 	// Alle Artikel durchlaufen
+	
 	for (var i = 0; i < this.articles.length; i++) {
-		var a = this.articles[i];
+		let a = this.articles[i];
 		
 		// Alle Tags des Artikels durchlaufen
 		for (var j = 0; j < a.tags.length; j++) {
@@ -30,16 +36,19 @@ export class SeidebarComponent implements OnInit{
 				this.tagMap.set(tag,1);
 			} else {
 				// war schon da, Anzahl erhöhen
-        let aktuelleTag = this.tagMap.get(tag);
-        aktuelleTag++;
+			let aktuellerTag = this.tagMap.get(tag);
+				aktuellerTag++;
 				// Maximum ggf. anpassen
-				if (this.tagMap[tag] > max) {
-					max = this.tagMap[tag];
+				if (aktuellerTag > this.max) {
+					this.max = aktuellerTag;
 				}
 			}
+			
+			
 		}
+		
   }
- 
+
    }
 
 }
