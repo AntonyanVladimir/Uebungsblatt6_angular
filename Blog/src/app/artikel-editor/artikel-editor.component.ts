@@ -15,18 +15,17 @@ export class ArtikelEditorComponent implements OnInit {
   artikels: artikel[] = this.artikelService.getArtikels();
   
   artikel:artikel;
-  artikelId;
+  
   
   
 
   ngOnInit(): void {
-    this.artikelId = this.route.paramMap.subscribe(params =>{
-      let id =  params.get('id');
+    this.route.paramMap.subscribe(params =>{
+      let id = +params.get('id');
       console.log(id);
       if(id){
-      
-        this.artikel = this.artikelService.getArtikelById(id);
-        console.log(this.artikelId);
+        this.artikel = this.artikels.find(m=>m.id===id);
+        console.log(this.artikel.id);
       } else this.artikel = this.artikels[0];
       
     })

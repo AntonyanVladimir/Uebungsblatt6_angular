@@ -1,3 +1,4 @@
+import { ArtikelEditorComponent } from './artikel-editor/artikel-editor.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -11,6 +12,7 @@ import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TaglisteComponent } from './tagliste/tagliste.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { TaglisteComponent } from './tagliste/tagliste.component';
     ArtikelListeComponent,
     NotFoundComponent,
     TaglisteComponent,
+    ArtikelEditorComponent
 
   ],
   imports: [
