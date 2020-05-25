@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImpressumComponentComponent } from './impressum-component.component';
+import { ArtikelShareComponent } from './artikel-share.component';
 
-describe('ImpressumComponentComponent', () => {
-  let component: ImpressumComponentComponent;
-  let fixture: ComponentFixture<ImpressumComponentComponent>;
+describe('ArtikelShareComponent', () => {
+  let component: ArtikelShareComponent;
+  let fixture: ComponentFixture<ArtikelShareComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ImpressumComponentComponent ]
+      declarations: [ ArtikelShareComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImpressumComponentComponent);
+    fixture = TestBed.createComponent(ArtikelShareComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

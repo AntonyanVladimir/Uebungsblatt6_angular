@@ -8,10 +8,7 @@ import { KopfbereichComponent } from './kopfbereich/kopfbereich.component';
 import { FussbereichComponent } from './fussbereich/fussbereich.component';
 import { SeidebarComponent } from './seidebar/seidebar.component';
 import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
-import { ArtikelEditorComponentComponent } from './artikel-editor-component/artikel-editor-component.component';
-import { ImpressumComponentComponent } from './impressum-component/impressum-component.component';
-import { KontaktComponentComponent } from './kontakt-component/kontakt-component.component';
-import { ArtikelShareComponentComponent } from './artikel-share-component/artikel-share-component.component';
+
 
 @NgModule({
   declarations: [
@@ -21,10 +18,7 @@ import { ArtikelShareComponentComponent } from './artikel-share-component/artike
     FussbereichComponent,
     SeidebarComponent,
     ArtikelListeComponent,
-    ArtikelEditorComponentComponent,
-    ImpressumComponentComponent,
-    KontaktComponentComponent,
-    ArtikelShareComponentComponent
+   
   ],
   imports: [
     BrowserModule,
