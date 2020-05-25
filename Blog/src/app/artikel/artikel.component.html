@@ -10,7 +10,7 @@
                     <p>{{artikel.datum}} Uhr von {{artikel.autor}}</p>
                     <p><b> {{artikel.anriss}} </b></p>
                     <img [src]="artikel.bild"/><br>
-                    <a class="badge badge-pill badge-primary" href="tagliste.html" *ngFor="let tag of artikel.tags">{{tag}}</a>
+                    <a class="badge badge-pill badge-primary" routerLink="/tagliste" *ngFor="let tag of artikel.tags">{{tag}}</a>
                     <p>{{artikel.text}}</p>
                    <div>
                     <a title="Facebook" href="https://www.facebook.com/share.php?u=artikel.html?id=${article.id}" target="_blank">Teilen auf Facebook</a> | 
@@ -18,7 +18,6 @@
                     <a href="teilenEmail.html?id=${article.id}">Teilen via E-Mail</a> 
                    </div>
                 </article>
-            
         </main>
-        <aside id="sidebar" class="col-12 col-md-3 mt-5"></aside>
+       
  

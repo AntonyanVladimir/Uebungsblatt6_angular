@@ -8,6 +8,8 @@ import { KopfbereichComponent } from './kopfbereich/kopfbereich.component';
 import { FussbereichComponent } from './fussbereich/fussbereich.component';
 import { SeidebarComponent } from './seidebar/seidebar.component';
 import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { TaglisteComponent } from './tagliste/tagliste.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
     FussbereichComponent,
     SeidebarComponent,
     ArtikelListeComponent,
+    NotFoundComponent,
+    TaglisteComponent,
    
   ],
   imports: [
