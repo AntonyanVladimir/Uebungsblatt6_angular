@@ -23,31 +23,31 @@ export class SeidebarComponent implements OnInit{
 
 	// Alle Artikel durchlaufen
 	
-	for (var i = 0; i < this.articles.length; i++) {
-		let a = this.articles[i];
+// 	for (var i = 0; i < this.articles.length; i++) {
+// 		let a = this.articles[i];
 		
-		// Alle Tags des Artikels durchlaufen
-		for (var j = 0; j < a.tags.length; j++) {
-			var tag = a.tags[j];
-			// Testen, ob das Tag schon in der Map ist
-			if (!(this.tagMap.has(tag))) {
-				// Nein, taucht zum ersten Mal auf
-				// --> mit Anzahl 1 in die Map schreiben
-				this.tagMap.set(tag,1);
-			} else {
-				// war schon da, Anzahl erhöhen
-			let aktuellerTag = this.tagMap.get(tag);
-				aktuellerTag++;
-				// Maximum ggf. anpassen
-				if (aktuellerTag > this.max) {
-					this.max = aktuellerTag;
-				}
-			}
+// 		// Alle Tags des Artikels durchlaufen
+// 		for (var j = 0; j < a.tags.length; j++) {
+// 			var tag = a.tags[j];
+// 			// Testen, ob das Tag schon in der Map ist
+// 			if (!(this.tagMap.has(tag))) {
+// 				// Nein, taucht zum ersten Mal auf
+// 				// --> mit Anzahl 1 in die Map schreiben
+// 				this.tagMap.set(tag,1);
+// 			} else {
+// 				// war schon da, Anzahl erhöhen
+// 			let aktuellerTag = this.tagMap.get(tag);
+// 				aktuellerTag++;
+// 				// Maximum ggf. anpassen
+// 				if (aktuellerTag > this.max) {
+// 					this.max = aktuellerTag;
+// 				}
+// 			}
 			
 			
-		}
+// 		}
 		
-  }
+//   }
 
    }
 

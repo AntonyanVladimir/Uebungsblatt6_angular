@@ -2,7 +2,7 @@ export class artikel{
     id:string;
     ueberschrift:string;
     autor: string;
-    datum: Date;    
+    datum: string;    
     anriss: string;
     text:string;
     bild: string;

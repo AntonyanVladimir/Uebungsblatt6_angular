@@ -7,6 +7,7 @@ import { ArtikelComponent } from './artikel/artikel.component';
 import { KopfbereichComponent } from './kopfbereich/kopfbereich.component';
 import { FussbereichComponent } from './fussbereich/fussbereich.component';
 import { SeidebarComponent } from './seidebar/seidebar.component';
+import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SeidebarComponent } from './seidebar/seidebar.component';
     ArtikelComponent,
     KopfbereichComponent,
     FussbereichComponent,
-    SeidebarComponent
+    SeidebarComponent,
+    ArtikelListeComponent
   ],
   imports: [
     BrowserModule,

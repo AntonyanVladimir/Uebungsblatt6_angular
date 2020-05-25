@@ -12,7 +12,7 @@ export class ArtikelComponent implements OnInit {
   article:{
 
   }
-  @Input("blog-articles") articles:artikel[]
+  @Input("blog-article") artikel:artikel
   
 
   ngOnInit(): void {
