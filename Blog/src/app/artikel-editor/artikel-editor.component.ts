@@ -1,3 +1,4 @@
+import { artikel } from './../artikel';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class ArtikelEditorComponent implements OnInit {
 
   constructor() { }
+  artikel:artikel;
 
   ngOnInit(): void {
+    
   }
 
 }

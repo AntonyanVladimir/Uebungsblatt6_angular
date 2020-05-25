@@ -1,16 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { artikel } from '../artikel';
-import { ActivatedRoute } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { artikel } from './artikel';
 
-@Component({
-  selector: 'app-artikel-details',
-  templateUrl: './artikel-details.component.html',
-  styleUrls: ['./artikel-details.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class ArtikelDetailsComponent implements OnInit {
 
-  
-  constructor(private route:ActivatedRoute) { }
+export class ArtikelService {
+
+  constructor() { }
   artikels: artikel[] =  [
     {
       id:'article1',
@@ -53,14 +50,10 @@ export class ArtikelDetailsComponent implements OnInit {
       tags: ['Semantik', 'HTML5', 'Element']
     },	
   ];
-  artikelId;
-  artikel:artikel;
-  ngOnInit(): void {
-    this.artikelId = this.route.paramMap.subscribe(params =>{
-      this.artikelId = +params.get('id');
-      this.artikel = this.artikels[this.artikelId];
-    })
 
+   getArtikels () {
+    return this.artikels;
   }
+
 
 }

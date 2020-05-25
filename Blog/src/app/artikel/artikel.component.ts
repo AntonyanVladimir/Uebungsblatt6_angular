@@ -1,5 +1,7 @@
+import { ArtikelService } from './../artikel.service';
 import { Component, OnInit, Input} from '@angular/core';
 import { artikel } from '../artikel';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artikel',
@@ -8,16 +10,22 @@ import { artikel } from '../artikel';
 })
 export class ArtikelComponent implements OnInit {
 
-  constructor(){
+  constructor(private route:ActivatedRoute, private artikelService:ArtikelService) { }
+  artikels: artikel[] = this.artikelService.getArtikels();
 
-  }
- 
-  
-  @Input("blog-article") artikel:artikel
-  
+  artikelId;
+  @Input('app-artikel') artikel:artikel;
 
   ngOnInit(): void {
-    
+    this.artikelId = this.route.paramMap.subscribe(params =>{
+      let id =  params.get('id');
+      if(id){
+        this.artikelId = +id;
+        this.artikel = this.artikels[this.artikelId];
+      }
+      
+    })
+
   }
 
 }

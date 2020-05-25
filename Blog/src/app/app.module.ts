@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, Injectable } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArtikelComponent } from './artikel/artikel.component';
@@ -10,8 +10,6 @@ import { SeidebarComponent } from './seidebar/seidebar.component';
 import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TaglisteComponent } from './tagliste/tagliste.component';
-import { ArtikelDetailsComponent } from './artikel-details/artikel-details.component';
-
 
 @NgModule({
   declarations: [
@@ -23,14 +21,15 @@ import { ArtikelDetailsComponent } from './artikel-details/artikel-details.compo
     ArtikelListeComponent,
     NotFoundComponent,
     TaglisteComponent,
-    ArtikelDetailsComponent,
-   
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
