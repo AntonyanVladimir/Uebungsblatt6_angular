@@ -13,10 +13,8 @@ export class ArtikelListeComponent implements OnInit {
   constructor(private route:ActivatedRoute, private artikelService: ArtikelService) { }
    
     artikels: artikel[] = this.artikelService.getArtikels();
+    articleId;
     
-   
- 
-  articleId;
   ngOnInit(): void {
    
     

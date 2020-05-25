@@ -10,7 +10,7 @@ export class ArtikelService {
   constructor() { }
   artikels: artikel[] =  [
     {
-      id:'article1',
+      id:0,
       ueberschrift: 'HTML Dokumente',
       autor: 'Thomas Richter',
       datum: new Date('15. February 2015 20:14').toISOString(),
@@ -30,7 +30,7 @@ export class ArtikelService {
       tags: ['HTML5', 'Dokument', 'HTTP']
     },
     {
-      id:'article2',
+      id:1,
       ueberschrift: 'HTML Elemente',
       autor: 'Thomas Richter',
       datum: new Date('15. February 2015 20:14').toISOString(),
@@ -40,7 +40,7 @@ export class ArtikelService {
       tags: ['HTML5', 'Element']
     },	
     {
-      id:'article3',
+      id:2,
       ueberschrift: 'Semantische Strukturierung von HTML-Seiten',
       autor: 'Thomas Richter',
       datum: new Date('15. February 2015 20:14').toISOString(),
@@ -53,6 +53,10 @@ export class ArtikelService {
 
    getArtikels () {
     return this.artikels;
+  }
+  getArtikelById(id){
+    let artikel = this.artikels.find(m=>m.id === id);
+    return artikel;
   }
 
 

@@ -1,5 +1,5 @@
 export class artikel{
-    id:string;
+    id:number;
     ueberschrift:string;
     autor: string;
     datum: string;    
