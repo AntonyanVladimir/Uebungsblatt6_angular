@@ -10,6 +10,7 @@ import { SeidebarComponent } from './seidebar/seidebar.component';
 import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TaglisteComponent } from './tagliste/tagliste.component';
+import { ArtikelDetailsComponent } from './artikel-details/artikel-details.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { TaglisteComponent } from './tagliste/tagliste.component';
     ArtikelListeComponent,
     NotFoundComponent,
     TaglisteComponent,
+    ArtikelDetailsComponent,
    
   ],
   imports: [

@@ -1,16 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { artikel } from '../artikel';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-artikel-liste',
-  templateUrl: './artikel-liste.component.html',
-  styleUrls: ['./artikel-liste.component.css']
+  selector: 'app-artikel-details',
+  templateUrl: './artikel-details.component.html',
+  styleUrls: ['./artikel-details.component.css']
 })
-export class ArtikelListeComponent implements OnInit {
+export class ArtikelDetailsComponent implements OnInit {
 
+  
   constructor(private route:ActivatedRoute) { }
-    //@Input('articles') articles:artikel[];
   artikels: artikel[] =  [
     {
       id:'article1',
@@ -53,14 +53,14 @@ export class ArtikelListeComponent implements OnInit {
       tags: ['Semantik', 'HTML5', 'Element']
     },	
   ];
-  articleId;
+  artikelId;
+  artikel:artikel;
   ngOnInit(): void {
-   
-    this.route.paramMap.subscribe((params: ParamMap) =>  {
-      this.articleId = params.get('id');
-      console.log("id");
-  });
-   
+    this.artikelId = this.route.paramMap.subscribe(params =>{
+      this.artikelId = +params.get('id');
+      this.artikel = this.artikels[this.artikelId];
+    })
+
   }
 
 }

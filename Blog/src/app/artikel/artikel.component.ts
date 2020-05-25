@@ -8,14 +8,16 @@ import { artikel } from '../artikel';
 })
 export class ArtikelComponent implements OnInit {
 
-  constructor() { }
-  article:{
+  constructor(){
 
   }
+ 
+  
   @Input("blog-article") artikel:artikel
   
 
   ngOnInit(): void {
+    
   }
 
 }
