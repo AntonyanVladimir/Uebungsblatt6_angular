@@ -55,9 +55,33 @@ export class ArtikelService {
     return this.artikels;
   }
   getArtikelById(id){
-    let artikel = this.artikels.find(m=>m.id === id);
+    var artikel = this.artikels.find(m=>m.id === id);
     return artikel;
   }
+  getArtikelsByTagName(tagName){
+    var articles:artikel[] = [];
+   
+    for(let i = 0; i< this.artikels.length; i++){
+      for(let tag of this.artikels[i].tags){
+        if(tag === tagName)
+         articles.push(articles[i]);
+
+      }
+    }
+    return articles;
+
+  }
+
+  // getArticleBytagName(tagName){
+  //   var artikelList:artikel[] = [];
+  //   for(let artikel of this.artikels){
+  //     for(let tag in artikel.tags){
+  //       if(tag===tagName)
+  //       artikelList.push(artikel);
+  //     }
+  //   }
+  //   return artikelList;
+  // }
 
 
 }

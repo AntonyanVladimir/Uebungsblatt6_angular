@@ -9,7 +9,7 @@
                 <p><b> {{artikel.anriss}} </b></p>
                 <div *ngIf="isCompact === false">
                     <img [src]="artikel.bild" /><br>
-                    <a class="badge badge-pill badge-primary" routerLink="/tagliste"
+                    <a class="badge badge-pill badge-primary" routerLink='/tagliste' [queryParams]="{tagName:tag}"
                         *ngFor="let tag of artikel.tags">{{tag}}</a>
                     <p>{{artikel.text}}</p>
                     <div>
