@@ -58,13 +58,14 @@ export class ArtikelService {
     var artikel = this.artikels.find(m=>m.id === id);
     return artikel;
   }
+
   getArtikelsByTagName(tagName){
     var articles:artikel[] = [];
    
     for(let i = 0; i< this.artikels.length; i++){
       for(let tag of this.artikels[i].tags){
         if(tag === tagName)
-         articles.push(articles[i]);
+         articles.push(this.artikels[i]);
 
       }
     }
@@ -72,12 +73,14 @@ export class ArtikelService {
 
   }
 
-  // getArticleBytagName(tagName){
-  //   var artikelList:artikel[] = [];
-  //   for(let artikel of this.artikels){
-  //     for(let tag in artikel.tags){
-  //       if(tag===tagName)
-  //       artikelList.push(artikel);
+  // getArticle111BytagName(tagName){
+  //   //var artikelList:artikel[] = []
+  //   var artikelList:artikel[] = this.artikels;
+   
+  //   for(let i = 0; i< this.artikels.length; i++){
+  //     for(let j = 0; j< this.artikels[i].tags.length; i++){
+  //       if(this.artikels[i].tags[j]===tagName)
+  //       artikelList.push(this.artikels[i]);
   //     }
   //   }
   //   return artikelList;
