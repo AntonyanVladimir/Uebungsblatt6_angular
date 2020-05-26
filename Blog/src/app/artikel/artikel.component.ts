@@ -15,10 +15,21 @@ export class ArtikelComponent implements OnInit {
 
   artikelId;
   @Input('app-artikel') artikel:artikel;
-
+  isCompact:boolean;
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe(params =>{
+      let display = params.get('display');
+      console.log(display);
+      if(display === 'compact'){
+        this.isCompact = true;
+      } else this.isCompact = false;
+    })
+    
     this.artikelId = this.route.paramMap.subscribe(params =>{
       let id =  params.get('id');
+   
+     
+      
       if(id){
         this.artikelId = +id;
         this.artikel = this.artikels[this.artikelId];
