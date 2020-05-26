@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { artikel } from '../artikel';
+import { ActivatedRoute } from '@angular/router';
+import { ArtikelService } from '../artikel.service';
 
 
 
@@ -9,15 +11,32 @@ import { artikel } from '../artikel';
   styleUrls: ['./seidebar.component.css']
 })
 export class SeidebarComponent implements OnInit{
-  @Input("articles") articles:artikel[];
+  constructor(private route:ActivatedRoute, private articleService:ArtikelService){
+
+  }
+  
   tagMap = new Map();
   math = Math;
   max:number;    
-  
+  articles:artikel[];
+  artikelId:number;
+  suchwort:string;
    getGroesse(tag:number) {
 	return Math.ceil(Math.floor(tag / (this.max / 5.0)));
   }
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe(params =>{
+      this.suchwort = params.get('suchwort');
+      this.articles = this.articleService.getArticlesBySuchwort(suchwort);
+      this.artikelId = +params.get('artikelId');
+     
+      
+      
+    })
+    
+
+
+
 
 	// größte Häufigkeit eines Tags
 

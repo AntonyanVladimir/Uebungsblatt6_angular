@@ -7,9 +7,9 @@
         <div class="col-12"><a class="btn btn-outline-primary btn-sm" href="#">Login</a></div>
         <hr class="col-12">
         <div class="col-12 input-group input-group-sm pr-0">
-            <input id="searchquery" name="searchquery" type="text" class="form-control" aria-label="Suchen">
+            <input id="searchquery" name="searchquery" type="text" class="form-control" [(ngModel)]="suchwort" aria-label="Suchen">
             <div class="input-group-append">
-                <a id="searchBtn" class="btn btn-outline-primary">Suchen</a>
+                <a id="searchBtn" class="btn btn-outline-primary" routerLink=""  [queryParams]="{'suchwort':suchwort}">Suchen</a>
             </div>
         </div>
         <hr class="col-12">

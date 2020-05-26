@@ -73,18 +73,8 @@ export class ArtikelService {
 
   }
 
-  // getArticle111BytagName(tagName){
-  //   //var artikelList:artikel[] = []
-  //   var artikelList:artikel[] = this.artikels;
-   
-  //   for(let i = 0; i< this.artikels.length; i++){
-  //     for(let j = 0; j< this.artikels[i].tags.length; i++){
-  //       if(this.artikels[i].tags[j]===tagName)
-  //       artikelList.push(this.artikels[i]);
-  //     }
-  //   }
-  //   return artikelList;
-  // }
-
+  getArticlesBySuchwort(suchwort){
+    
+  }
 
 }
