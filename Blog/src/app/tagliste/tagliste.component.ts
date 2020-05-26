@@ -12,16 +12,14 @@ export class TaglisteComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private artikelService: ArtikelService) { }
   artikels:artikel[];
-
+  tagName:string;
   ngOnInit(): void {
     
     
     this.route.queryParamMap.subscribe(params =>{
-      let tagName = params.get('tagName');
-      console.log(tagName);
-      this.artikels = this.artikelService.getArtikelsByTagName(tagName);
-       
-      console.log(this.artikels[0].autor);
+      this.tagName = params.get('tagName');
+     
+      this.artikels = this.artikelService.getArtikelsByTagName(this.tagName);
       
     })
     

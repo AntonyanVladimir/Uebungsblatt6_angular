@@ -1,1 +1,4 @@
-<p>tagliste works!</p>
+<h5>Alle Artikels mit dem tag <span id="tagSpan">{{tagName}}</span></h5>
+<div *ngFor="let article of artikels;">
+    <app-artikel [app-artikel]="article" ></app-artikel>
+</div>
