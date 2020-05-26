@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'kontakt', component: KontaktComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'tagliste', component: TaglisteComponent },
+  //{ path: ''},
   //{ path: 'tagliste/:tagName', component: TaglisteComponent },
   { path: '**', component: NotFoundComponent },
 ];

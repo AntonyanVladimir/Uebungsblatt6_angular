@@ -27,7 +27,8 @@ export class SeidebarComponent implements OnInit{
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params =>{
       this.suchwort = params.get('suchwort');
-      this.articles = this.articleService.getArticlesBySuchwort(suchwort);
+      this.articles = this.articleService.getArticlesBySuchwort(this.suchwort);
+      console.log(this.articles[0].autor);
       this.artikelId = +params.get('artikelId');
      
       

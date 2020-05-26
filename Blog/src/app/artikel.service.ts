@@ -74,7 +74,14 @@ export class ArtikelService {
   }
 
   getArticlesBySuchwort(suchwort){
-    
+    var articles:artikel[] = []; 
+    // this.artikels.forEach((artikel)=>{
+    //   for(let entry of Object.entries(artikel)){
+    //     if(entry.includes(suchwort))
+    //     articles.push(artikel);
+    //   }
+    // })
+    return this.artikels;
   }
 
 }
