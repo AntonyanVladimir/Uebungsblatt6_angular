@@ -75,13 +75,19 @@ export class ArtikelService {
 
   getArticlesBySuchwort(suchwort){
     var articles:artikel[] = []; 
-    // this.artikels.forEach((artikel)=>{
-    //   for(let entry of Object.entries(artikel)){
-    //     if(entry.includes(suchwort))
-    //     articles.push(artikel);
-    //   }
-    // })
-    return this.artikels;
+    this.artikels.forEach((artikel)=>{
+      for(let [key, value] of Object.entries(artikel)){
+        console.log(value);
+        if(key == 'text'||key=='ueberschrift'||key=='autor'||key=='anriss'){
+          if(value.search(suchwort) ==-1){
+            continue;
+          } else articles.push(artikel);
+
+        }
+       
+      }
+    })
+    return articles;
   }
 
 }

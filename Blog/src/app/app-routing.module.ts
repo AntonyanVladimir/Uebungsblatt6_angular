@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
 import { ImpressumComponent } from './impressum/impressum.component';
+import { SuchergebnisComponent } from './suchergebnis/suchergebnis.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'kontakt', component: KontaktComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'tagliste', component: TaglisteComponent },
+  { path: 'suchergebnis', component: SuchergebnisComponent },
   //{ path: ''},
   //{ path: 'tagliste/:tagName', component: TaglisteComponent },
   { path: '**', component: NotFoundComponent },

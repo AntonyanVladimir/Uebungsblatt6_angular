@@ -9,9 +9,10 @@
         <div class="col-12 input-group input-group-sm pr-0">
             <input id="searchquery" name="searchquery" type="text" class="form-control" [(ngModel)]="suchwort" aria-label="Suchen">
             <div class="input-group-append">
-                <a id="searchBtn" class="btn btn-outline-primary" routerLink=""  [queryParams]="{'suchwort':suchwort}">Suchen</a>
+                <a id="searchBtn" class="btn btn-outline-primary" routerLink="/suchergebnis"  [queryParams]="{'suchwort':suchwort}">Suchen</a>
             </div>
         </div>
+       
         <hr class="col-12">
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="monatsliste.html">November 2017 (3)</a></li>

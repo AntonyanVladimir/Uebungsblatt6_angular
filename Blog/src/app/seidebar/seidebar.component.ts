@@ -25,20 +25,7 @@ export class SeidebarComponent implements OnInit{
 	return Math.ceil(Math.floor(tag / (this.max / 5.0)));
   }
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(params =>{
-      this.suchwort = params.get('suchwort');
-      this.articles = this.articleService.getArticlesBySuchwort(this.suchwort);
-      console.log(this.articles[0].autor);
-      this.artikelId = +params.get('artikelId');
-     
-      
-      
-    })
     
-
-
-
-
 	// größte Häufigkeit eines Tags
 
 	// Alle Artikel durchlaufen
