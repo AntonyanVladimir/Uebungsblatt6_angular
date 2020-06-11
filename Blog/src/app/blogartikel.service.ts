@@ -15,4 +15,10 @@ export class BlogartikelService {
   getArticle(id):Observable<any[]>{
     return this.http.get<any[]>(`http://localhost:3000/articles/${id}`);
   }
+  getArticleByTagNameUndSuchstring(tagname, suchstring):Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:3000/articles/?tag=${tagname}&query=${suchstring}`)
+  }
+  getArticleByTagName(suchstring):Observable<any[]>{
+    return this.http.get<any[]>(`http://localhost:3000/articles/?suchwort=${suchstring}`)
+  }
 }
