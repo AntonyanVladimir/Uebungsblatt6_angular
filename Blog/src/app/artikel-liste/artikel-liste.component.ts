@@ -2,6 +2,7 @@ import { ArtikelService } from './../artikel.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { artikel } from '../artikel';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { BlogartikelService } from '../blogartikel.service';
 
 @Component({
   selector: 'app-artikel-liste',
@@ -10,15 +11,16 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ArtikelListeComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute, private artikelService: ArtikelService) { }
+  constructor(private route:ActivatedRoute, private service:BlogartikelService) { }
    
-    artikels: artikel[] = this.artikelService.getArtikels();
+    artikels: any;
     articleId;
     
   ngOnInit(): void {
-   
-    
-   
+    this.service.getArticles().subscribe((response:any)=>
+    {
+      this.artikels = response
+    });
   }
 
 }

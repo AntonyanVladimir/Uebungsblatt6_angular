@@ -3,28 +3,31 @@
         <main id="inhalt" class="col-12 col-md-9">
             <a class="btn btn-primary" href="artikelNeu.html">Neuen Artikel erstellen</a>
             <hr>
-            <article [id]="artikel.id">
-                <h2><a href="artikel.html"></a>{{artikel.ueberschrift}}</h2>
-                <p>{{artikel.datum}} Uhr von {{artikel.autor}}</p>
-                <p><b> {{artikel.anriss}} </b></p>
-                <div *ngIf="isCompact === false">
-                    <img [src]="artikel.bild" /><br>
-                    <a class="badge badge-pill badge-primary" routerLink='/tagliste' [queryParams]="{tagName:tag}"
-                        *ngFor="let tag of artikel.tags">{{tag}}</a>
-                    <p>{{artikel.text}}</p>
-                    <div>
-                        <a title="Facebook" href="https://www.facebook.com/share.php?u=artikel.html?id=${article.id}"
-                            target="_blank">Teilen auf Facebook</a> |
-                        <a title="Twitter" href="https://twitter.com/intent/tweet?url=artikel.html?id=${article.id}"
-                            target="_blank">Twittern</a> |
-                        <a href="teilenEmail.html?id=${article.id}">Teilen via E-Mail</a> <br>
-                        <a type="button" class="btn btn-warning" [routerLink]="['/artikel-editor', artikel.id]"
-                            [queryParams]="{display:'compact'}">Edit Article</a>
+            <ng-container *ngIf="artikel">
+
+                <article [id]="artikel.id">
+                    <h2><a href="artikel.html"></a>{{artikel.ueberschrift}}</h2>
+                    <p>{{artikel.datum}} Uhr von {{artikel.autor}}</p>
+                    <p><b> {{artikel.anriss}} </b></p>
+                    <div *ngIf="isCompact === false">
+                        <img [src]="artikel.bild" /><br>
+                        <a class="badge badge-pill badge-primary" routerLink='/tagliste' [queryParams]="{tagName:tag}"
+                            *ngFor="let tag of artikel.tags">{{tag}}</a>
+                        <p>{{artikel.text}}</p>
+                        <div>
+                            <a title="Facebook" href="https://www.facebook.com/share.php?u=artikel.html?id=${article.id}"
+                                target="_blank">Teilen auf Facebook</a> |
+                            <a title="Twitter" href="https://twitter.com/intent/tweet?url=artikel.html?id=${article.id}"
+                                target="_blank">Twittern</a> |
+                            <a href="teilenEmail.html?id=${article.id}">Teilen via E-Mail</a> <br>
+                            <a type="button" class="btn btn-warning" [routerLink]="['/artikel-editor', artikel.id]"
+                                [queryParams]="{display:'compact'}">Edit Article</a>
+                        </div>
                     </div>
-                </div>
-                <a type="button" class="btn btn-primary" [routerLink]="['/articles', artikel.id]"
-                    [queryParams]="{display:'compact'}">ArtikelCompakt</a>
-                <a type="button" class="btn btn-primary" [routerLink]="['/articles', artikel.id]"
-                    [queryParams]="{display:'full'}">Details</a>
-            </article>
+                    <a type="button" class="btn btn-primary" [routerLink]="['/articles', artikel.id]"
+                        [queryParams]="{display:'compact'}">ArtikelCompakt</a>
+                    <a type="button" class="btn btn-primary" [routerLink]="['/articles', artikel.id]"
+                        [queryParams]="{display:'full'}">Details</a>
+                </article>
+            </ng-container>    
         </main>

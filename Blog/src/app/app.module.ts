@@ -12,7 +12,7 @@ import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TaglisteComponent } from './tagliste/tagliste.component';
 import { SuchergebnisComponent } from './suchergebnis/suchergebnis.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { SuchergebnisComponent } from './suchergebnis/suchergebnis.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],
