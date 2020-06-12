@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { artikel } from '../artikel';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BlogartikelService } from '../blogartikel.service';
-
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 @Component({
   selector: 'app-artikel-liste',
   templateUrl: './artikel-liste.component.html',
@@ -11,7 +11,7 @@ import { BlogartikelService } from '../blogartikel.service';
 })
 export class ArtikelListeComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute, private service:BlogartikelService) { }
+  constructor(private route:ActivatedRoute, private service:BlogartikelService, private location:Location) { }
    
     artikels: any;
     articleId;
@@ -21,6 +21,15 @@ export class ArtikelListeComponent implements OnInit {
     {
       this.artikels = response
     });
+   // let article = this.service.getArticle()
   }
-
+ // this.service.deleteArticle()
+ deleteArticle(id){
+   console.log('deleting...'+id);
+   //let article = this.artikels.find(m=>m.id===id);
+    this.service.deleteArticle(id).subscribe;
+    this.location.back();
+  }
+  
+  
 }

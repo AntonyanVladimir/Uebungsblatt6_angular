@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders } from '@angular/common/http'
+import {HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,4 +31,9 @@ export class BlogartikelService {
   editArticle(article):Observable<any[]>{
     return this.http.put<any>(`http://localhost:3000/articles/${article.id}`, article, httpOptions);
   }
+  deleteArticle(id):Observable<void>{
+    return this.http.delete<void>(`http://localhost:3000/articles/${id}`)
+  }
+  
 }
+
