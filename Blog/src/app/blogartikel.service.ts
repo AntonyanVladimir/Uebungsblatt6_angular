@@ -37,5 +37,8 @@ export class BlogartikelService {
   getBlogsTagMap():Observable<JSON>{
    return this.http.get<JSON>(`http://localhost:3000/tags`)
   }
+  createArticle(artikel):Observable<any>{
+    return this.http.post<any>(`http://localhost:3000/articles`, artikel, httpOptions);
+  }
 }
 

@@ -1,3 +1,4 @@
+<a class="btn btn-primary" routerLink="/newArticle">Neuen Artikel erstellen</a>
 <button class="btn btn-dark" routerLink="/tags" id="tagbutton">Tags Des Blogs</button>
 <div *ngFor="let article of artikels; let i = index">
     <app-artikel [app-artikel]="artikels[i]" ></app-artikel>

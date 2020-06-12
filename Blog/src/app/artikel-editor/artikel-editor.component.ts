@@ -19,7 +19,14 @@ export class ArtikelEditorComponent implements OnInit {
   
   
   ngOnInit(): void {
-    this.getArticleFromTheRoute()
+    let id = this.route.snapshot.paramMap.get('id');
+    if(id){
+      this.getArticleFromTheRoute()
+    } else{
+      this.artikel = {};
+      this.createBlogArticle();
+      
+    }
     if (this.artikel) {
       this.service.editArticle(this.artikel)
     }
@@ -30,8 +37,19 @@ export class ArtikelEditorComponent implements OnInit {
       this.artikel = response;
     });
   }
+  createBlogArticle(){
+    
+  }
   save(): void {
-    this.service.editArticle(this.artikel).subscribe(() => this.goBack());
+    if(this.route.snapshot.paramMap.get('id')){
+   console.log('Artikel wird Edited...');   
+      this.service.editArticle(this.artikel).subscribe(() => this.goBack());
+    }
+    else{
+      console.log('Artikel wird Created...');
+      this.service.createArticle(this.artikel).subscribe(()=>console.log('Artikel wurde erstellt!!!'))
+    }
+
   }
   goBack() {
     this.location.back();

@@ -14,6 +14,7 @@ import { TaglisteComponent } from './tagliste/tagliste.component';
 import { SuchergebnisComponent } from './suchergebnis/suchergebnis.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TagsDesBlogsComponent } from './tags-des-blogs/tags-des-blogs.component';
+import { NewArticleComponent } from './new-article/new-article.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TagsDesBlogsComponent } from './tags-des-blogs/tags-des-blogs.component
     TaglisteComponent,
     ArtikelEditorComponent,
     SuchergebnisComponent,
-    TagsDesBlogsComponent
+    TagsDesBlogsComponent,
+    NewArticleComponent
 
   ],
   imports: [

@@ -9,6 +9,7 @@ import { ArtikelListeComponent } from './artikel-liste/artikel-liste.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { SuchergebnisComponent } from './suchergebnis/suchergebnis.component';
 import { TagsDesBlogsComponent } from './tags-des-blogs/tags-des-blogs.component';
+import { NewArticleComponent } from './new-article/new-article.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'tagliste', component: TaglisteComponent },
   { path: 'suchergebnis', component: SuchergebnisComponent },
   { path: 'tags', component:TagsDesBlogsComponent},
+  { path:'newArticle', component:ArtikelEditorComponent},
   //{ path: ''},
   //{ path: 'tagliste/:tagName', component: TaglisteComponent },
   { path: '**', component: NotFoundComponent },
