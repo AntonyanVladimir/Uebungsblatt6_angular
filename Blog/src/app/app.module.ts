@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TaglisteComponent } from './tagliste/tagliste.component';
 import { SuchergebnisComponent } from './suchergebnis/suchergebnis.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TagsDesBlogsComponent } from './tags-des-blogs/tags-des-blogs.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     TaglisteComponent,
     ArtikelEditorComponent,
-    SuchergebnisComponent
+    SuchergebnisComponent,
+    TagsDesBlogsComponent
 
   ],
   imports: [

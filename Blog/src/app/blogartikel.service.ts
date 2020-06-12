@@ -34,6 +34,8 @@ export class BlogartikelService {
   deleteArticle(id):Observable<void>{
     return this.http.delete<void>(`http://localhost:3000/articles/${id}`)
   }
-  
+  getBlogsTagMap():Observable<JSON>{
+   return this.http.get<JSON>(`http://localhost:3000/tags`)
+  }
 }
 

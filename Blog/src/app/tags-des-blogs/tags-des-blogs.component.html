@@ -1,0 +1,22 @@
+<p>tags-des-blogs works!</p>
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">TagName</th>
+            <th scope="col">Count</th>
+          </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let tag of tagListe">
+                <tr>
+                    <th scope="row">#</th>
+                    <td>{{tag[0]}}</td>
+                    <td>{{tag[1]}}</td>
+                  </tr>
+            </ng-container>
+        </tbody>
+      </table>
+
+   </div>

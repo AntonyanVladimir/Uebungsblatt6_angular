@@ -37,7 +37,7 @@ export class ArtikelComponent implements OnInit {
   }
   deleteArticle(){
          this.blogartikelService.deleteArticle(this.artikel.id)
-         .subscribe(()=>console.log('Wurde erfolgreich gelöscht.'), 
+         .subscribe(()=>console.log('Wurde erfolgreich gelöscht.'),
          (err)=>{console.log(err)});
      }
    
