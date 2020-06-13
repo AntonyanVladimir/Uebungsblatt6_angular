@@ -16,7 +16,7 @@ export class ArtikelComponent implements OnInit {
   constructor(private route:ActivatedRoute, private blogartikelService:BlogartikelService) { }
   @Input('app-artikel') artikel:any;
   
-  confirmDelete:boolean;
+
   isCompact:boolean;
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params =>{
@@ -35,11 +35,7 @@ export class ArtikelComponent implements OnInit {
     }
       
   }
-  deleteArticle(){
-         this.blogartikelService.deleteArticle(this.artikel.id)
-         .subscribe(()=>console.log('Wurde erfolgreich gelöscht.'),
-         (err)=>{console.log(err)});
-     }
+  
    
   
 

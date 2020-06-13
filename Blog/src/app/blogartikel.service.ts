@@ -32,7 +32,7 @@ export class BlogartikelService {
     return this.http.put<any>(`http://localhost:3000/articles/${article.id}`, article, httpOptions);
   }
   deleteArticle(id):Observable<void>{
-    return this.http.delete<void>(`http://localhost:3000/articles/${id}`)
+    return this.http.delete<void>(`http://localhost:3000/articles/${id}`, httpOptions)
   }
   getBlogsTagMap():Observable<JSON>{
    return this.http.get<JSON>(`http://localhost:3000/tags`)

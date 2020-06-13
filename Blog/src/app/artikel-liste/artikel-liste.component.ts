@@ -1,5 +1,5 @@
 import { ArtikelService } from './../artikel.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { artikel } from '../artikel';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BlogartikelService } from '../blogartikel.service';
@@ -15,7 +15,7 @@ export class ArtikelListeComponent implements OnInit {
    
     artikels: any;
     articleId;
-    
+  
   ngOnInit(): void {
     this.service.getArticles().subscribe((response:any)=>
     {
@@ -25,11 +25,13 @@ export class ArtikelListeComponent implements OnInit {
   }
  // this.service.deleteArticle()
  deleteArticle(id){
-   console.log('deleting...'+id);
-   //let article = this.artikels.find(m=>m.id===id);
-    this.service.deleteArticle(id).subscribe;
-    this.location.back();
-  }
+   //delete from the UI
+   this.artikels = this.artikels.filter(m=>m.id !==id)
+   //delete from the server
+  this.service.deleteArticle(id)
+  .subscribe();
+  
+}
   
   
 }
