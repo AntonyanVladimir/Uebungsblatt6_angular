@@ -1,3 +1,4 @@
+import { BlogartikelService } from './../blogartikel.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { artikel } from '../artikel';
 import { ActivatedRoute } from '@angular/router';
@@ -11,50 +12,34 @@ import { ArtikelService } from '../artikel.service';
   styleUrls: ['./seidebar.component.css']
 })
 export class SeidebarComponent implements OnInit{
-  constructor(private route:ActivatedRoute, private articleService:ArtikelService){
-
+  constructor(private route:ActivatedRoute, private service:BlogartikelService){
   }
-  
-  tagMap = new Map();
-  math = Math;
-  max:number;    
-  articles:artikel[];
-  artikelId:number;
+  //[[],[],[]]
+  tagListe:any;
   suchwort:string;
-   getGroesse(tag:number) {
-	return Math.ceil(Math.floor(tag / (this.max / 5.0)));
+  maxVorkommendeTagCount:number;
+  getGroesse(tagName){
+    let maxVorkommendeTagCount = this.Berechnen();
+    let allTagCount = 0;
+     let absuluteHäufigkeit = tagName[1];
+     let relativeHäufigkeit = absuluteHäufigkeit/allTagCount;
+     var size = Math.ceil(absuluteHäufigkeit/(maxVorkommendeTagCount/ 5.0));
+     
+     return size;
+  }
+  Berechnen(){
+    let max = 1;
+    for(let tag of this.tagListe){
+        if(tag[1]>max)
+        max = tag[1];
+    }
+    return max;
   }
   ngOnInit(): void {
-    
-	// größte Häufigkeit eines Tags
-
-	// Alle Artikel durchlaufen
-	
-// 	for (var i = 0; i < this.articles.length; i++) {
-// 		let a = this.articles[i];
-		
-// 		// Alle Tags des Artikels durchlaufen
-// 		for (var j = 0; j < a.tags.length; j++) {
-// 			var tag = a.tags[j];
-// 			// Testen, ob das Tag schon in der Map ist
-// 			if (!(this.tagMap.has(tag))) {
-// 				// Nein, taucht zum ersten Mal auf
-// 				// --> mit Anzahl 1 in die Map schreiben
-// 				this.tagMap.set(tag,1);
-// 			} else {
-// 				// war schon da, Anzahl erhöhen
-// 			let aktuellerTag = this.tagMap.get(tag);
-// 				aktuellerTag++;
-// 				// Maximum ggf. anpassen
-// 				if (aktuellerTag > this.max) {
-// 					this.max = aktuellerTag;
-// 				}
-// 			}
-			
-			
-// 		}
-		
-//   }
+    this.service.getBlogsTagMap().subscribe((response:any)=>{
+      this.tagListe = response;
+     console.log(this.tagListe);
+    });
 
    }
 

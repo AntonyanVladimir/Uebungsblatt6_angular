@@ -36,8 +36,4 @@ export class ArtikelComponent implements OnInit {
       
   }
   
-   
-  
-
-
 }

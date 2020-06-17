@@ -20,7 +20,7 @@
             <li class="list-group-item"><a href="monatsliste.html">März 2018 (2)</a></li>
             <li class="list-group-item"><a href="monatsliste.html">April 2018 (1)</a></li>
         </ul>
-
-        <div class="col-12"><a *ngFor="let tag of tagMap |keyvalue " href="#" [class]="'tag-'+getGroesse(tag.value)">{{tag.key}} </a></div>    
+        <hr class="col-12">
+        <div class="col-12"><a *ngFor="let tag of tagListe" href="#" [class]="'tag-'+getGroesse(tag)">{{tag[0]}} </a></div>    
     </div>
 </aside>
